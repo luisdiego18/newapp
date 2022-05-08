@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 import { borderLeftColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 import colors from "../config/colors";
-import AppText from "./AppText";
+import AppText from "./Text";
 
 function Card({ title, subTitle, image }) {
   return (
