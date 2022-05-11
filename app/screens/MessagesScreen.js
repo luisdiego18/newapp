@@ -8,17 +8,22 @@ import Screen from "../components/Screen";
 const initialMessages = [
   {
     id: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    title: "Is the red jacket avaiable?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: require("../assets/mosh.jpg"),
+      "Hey hope everything is good, I am really interested in buying the red jacket",
+    image: require("../assets/luisDiego.jpeg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
-    image: require("../assets/mosh.jpg"),
+    title: "what is the lowest price for the couch?",
+    description: "I am interested in getting the couch..",
+    image: require("../assets/luisDiego.jpeg"),
+  },
+  {
+    id: 3,
+    title: "What is the size of the red jacket?",
+    description: "Im size xl, please let me know if the size is xl",
+    image: require("../assets/luisDiego.jpeg"),
   },
 ];
 
@@ -41,7 +46,7 @@ function MessagesScreen(props) {
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            onPress={() => console.log("Test", item)}
+            onPress={() => console.log("Test1", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
@@ -49,16 +54,6 @@ function MessagesScreen(props) {
         )}
         ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
-        onRefresh={() => {
-          setMessages([
-            {
-              id: 2,
-              title: "T2",
-              description: "D2",
-              image: require("../assets/mosh.jpg"),
-            },
-          ]);
-        }}
       />
     </Screen>
   );

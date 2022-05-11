@@ -16,10 +16,31 @@ const menuItem = [
     },
   },
   {
-    title: "My messages",
+    title: "My Sales",
     icon: {
-      name: "email",
+      name: "cash",
       backgroundColor: colors.secondary,
+    },
+  },
+  {
+    title: "My Prospect",
+    icon: {
+      name: "account-multiple",
+      backgroundColor: colors.medium,
+    },
+  },
+  {
+    title: "My Stats",
+    icon: {
+      name: "poll",
+      backgroundColor: colors.primary,
+    },
+  },
+  {
+    title: "My Contacts",
+    icon: {
+      name: "contacts",
+      backgroundColor: colors.dark,
     },
   },
 ];
@@ -29,9 +50,9 @@ function AccountScreen(props) {
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Name"
-          subTitle="Email"
-          image={require("../assets/mosh.jpg")}
+          title="Luis Diego"
+          subTitle="lhernandez19@my.wctc.edu"
+          image={require("../assets/luisDiego.jpeg")}
         />
       </View>
 
@@ -53,10 +74,6 @@ function AccountScreen(props) {
           )}
         ></FlatList>
       </View>
-      <ListItem
-        title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-      />
     </Screen>
   );
 }

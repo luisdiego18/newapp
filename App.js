@@ -1,30 +1,59 @@
-import React, { useState } from "react";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import AppButton from "./app/components/Button";
-import Card from "./app/components/Card";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
+import React from "react";
+import { Button, Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Screen from "./app/components/Screen";
-import Icon from "./app/components/Icon";
-import ListItem from "./app/components/ListItem";
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingScreen from "./app/screens/ListingScreen";
-import AppTextInput from "./app/components/TextInput";
-import { Switch } from "react-native";
-import AppPicker from "./app/components/Picker";
-import LoginScreen from "./app/screens/LoginScreen";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 
-export default function App() {
-  return <ListingEditScreen />;
-}
+const Link = () => {
+  const navigation = useNavigation();
+  return (
+    <Button title="Click" onPress={() => navigation.navigate("TweetDetails")} />
+  );
+};
 
-/* <AppPicker
-selectedItem={category}
-onSelectItem={(item) => setCategory(item)}
-items={categories}
-icon="apps"
-placeholder="Category"
-/>
-<AppTextInput icon="email" placeholder="Email" /> */
+const Tweets = ({ navigation }) => (
+  <Screen>
+    <Text>Tweets</Text>
+    <Link />
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>TweetDetails</Text>
+  </Screen>
+);
+
+const Account = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+  </Stack.Navigator>
+);
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="Feed" component={Tweets} />
+    <Tab.Screen name="Account" component={Account} />
+  </Tab.Navigator>
+);
+
+export default function App() {
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
+}
