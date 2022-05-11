@@ -10,13 +10,19 @@ const listing = [
     id: 1,
     title: "Red Leather Jacket",
     price: 100,
-    image: require("../assets/jacket.jpg"),
+    image: require("../assets/jacket.png"),
   },
   {
     id: 2,
     title: "Couch in great condition",
     price: 500,
-    image: require("../assets/couch.jpg"),
+    image: require("../assets/couch.jpeg"),
+  },
+  {
+    id: 3,
+    title: "Fast Car",
+    price: 12000,
+    image: require("../assets/car.jpeg"),
   },
 ];
 

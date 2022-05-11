@@ -25,6 +25,12 @@ const initialMessages = [
     description: "Im size xl, please let me know if the size is xl",
     image: require("../assets/luisDiego.jpeg"),
   },
+  {
+    id: 4,
+    title: "How fast is that car",
+    description: "Let me know how fuel efficient is that car.",
+    image: require("../assets/luisDiego.jpeg"),
+  },
 ];
 
 function MessagesScreen(props) {
